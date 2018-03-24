@@ -3,23 +3,19 @@ package data_structures;
 import java.util.Random;
 
 public abstract class Randomness {
-	
-	public boolean rB()
-	{
+
+	public static boolean rB() {
 		int i;
 		Random r = new Random();
 		i = r.nextInt(1);
-		if(i == 0) {
+		if (i == 0) {
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
-	
-	public int rI()
-	{
+
+	public static int rI() {
 		int i1;
 		Random r1 = new Random();
 		i1 = r1.nextInt(9) + 1;
