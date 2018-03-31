@@ -29,8 +29,8 @@ public class RemovingStuffFromArrayLists {
 
 		/* TODO 1: Clean out the dirt but keep the delicious worms. */
 
-		for (int i = 0; i <= stuffIFoundInTheYard.size(); i++) {
-			if (stuffIFoundInTheYard.get(i).getClass() == Dirt.class) {
+		for (int i = 0; i < stuffIFoundInTheYard.size(); i++) {
+			if (stuffIFoundInTheYard.get(i).getClass() == Dirt.class) { 
 				stuffIFoundInTheYard.remove(i);
 			}
 		}

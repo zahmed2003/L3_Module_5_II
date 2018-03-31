@@ -10,14 +10,16 @@ import org.junit.Test;
 
 public class TestMatchingBrackets {
 	
-	int numOpen = 0;
+	int numClosed = 0;
+
+	Stack <Character> brackets = new Stack <Character>();
 
 	@Test
 	public void testMatchingBrackets() {
 		assertTrue(doBracketsMatch("{}"));
 		assertTrue(doBracketsMatch("{{}}"));
 		assertTrue(doBracketsMatch("{}{}{{}}"));
-		assertFalse(doBracketsMatch("{{}"));
+		assertFalse(doBracketsMatch("{{}")); 
 		assertFalse(doBracketsMatch("}{"));
 	}
 
@@ -25,35 +27,22 @@ public class TestMatchingBrackets {
 	// A MATCHING CLOSING BRACKET
 
 	private boolean doBracketsMatch(String b) {
-		Stack<Character> check = new Stack<Character> ();
-		for(int i = b.length(); i > 0; i--)
+		for(int i = 0; i < b.length(); i++)
 		{
-			check.push(b.charAt(i));
-		}
-		for(int j = 0; j < check.size(); j++)
-		{
-			if(numOpen < 0)
-			{
-				numOpen = 0;
-			}
-			if(check.get(j).toString().equals("{"))
-			{
-				numOpen += 1;
-			}
-			if(check.get(j).toString().equals("}"))
-			{
-				numOpen -= 1;
-			}
+			brackets.push(b.charAt(i));
 		}
 		
-		if(numOpen == 0)
+		
+		for(int j = 0; j < brackets.size(); j++)
 		{
-			return true;
+			if(numClosed < 0) {numClosed = 0;}
+			if(brackets.pop().toString().equals("}")) {numClosed += 1;}
+			if(brackets.pop().toString().equals("{")) {numClosed-= 1;}
 		}
-		else
-		{
-			return false;
-		}
+		
+		
+		if(numClosed == 0) {return true;}
+		else {return false;}
 	}
 
 }

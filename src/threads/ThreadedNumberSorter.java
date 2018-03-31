@@ -1,5 +1,6 @@
 package threads;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class ThreadedNumberSorter {
@@ -12,14 +13,8 @@ public class ThreadedNumberSorter {
 		long startTime = System.nanoTime();
 		// Complete this method starting at this point
 		
-		new Thread(()-> 
-		{
-		for(int i = 0; i < nums.length; i++)
-		{
 		
-		}	
-		}
-				).start();
+		new Thread(()-> Arrays.sort(nums)).start();
 		
 
 		long totalTime = System.nanoTime() - startTime;
@@ -37,12 +32,12 @@ public class ThreadedNumberSorter {
 
 		// printArray(nums);
 		parallelSort(nums);
-		 printArray(nums);
+		// printArray(nums);
 	}
 
 	private static void printArray(int[] nums) {
 		for (int i = 0; i < nums.length; i++) {
-			System.out.println(nums[i]);
+			System.out.println(nums[i]); 
 		}
 	}
 }
