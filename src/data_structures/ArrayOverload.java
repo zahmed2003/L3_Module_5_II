@@ -9,15 +9,16 @@ public class ArrayOverload {
 	public static void main(String[] args) {
 		ArrayOverload over = new ArrayOverload();
 		over.overload();
-		System.out.println(over.overload);
+		
 	}
 
 	public void overload() {
-		for (int i = 0; i <= 999 * 999; i++) {
-			overload.add(i);
-			for (int j = 0; j <= i * 999; j++) {
-				overload.add(j);
-			}
-		}
+		
+	for(int i = 0; i <= 9999; i++)
+	{
+		overload.add(i);
+		overload();
+	}
+	
 	}
 }

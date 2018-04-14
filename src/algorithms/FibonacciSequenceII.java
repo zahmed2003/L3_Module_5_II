@@ -5,7 +5,7 @@ public class FibonacciSequenceII {
 	
 	public static void main(String[] args) {
 		FibonacciSequenceII fs = new FibonacciSequenceII();
-		System.out.println(fs.fib(7));
+		System.out.println(fs.fib(10));
 	}
 	
 	public int fib(int n)
