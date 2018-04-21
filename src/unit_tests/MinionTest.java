@@ -1,4 +1,4 @@
-package data_structures;
+package unit_tests;
 
 import static org.junit.Assert.assertEquals;
 
