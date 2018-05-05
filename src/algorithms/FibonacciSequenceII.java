@@ -2,11 +2,24 @@ package algorithms;
 
 public class FibonacciSequenceII {
 
+	String format;
 	
 	public static void main(String[] args) {
 		FibonacciSequenceII fs = new FibonacciSequenceII();
-		System.out.println(fs.fib(10));
+		String formatted = fs.formatFib(100);
+		System.out.println(formatted);
 	}
+	
+	
+	public String formatFib(int nums)
+	{
+		for(int i = 0; i < nums; i++)
+		{
+			format = format + System.lineSeparator() + fib(i);
+		}
+		return format;
+	}
+	
 	
 	public int fib(int n)
 	{
