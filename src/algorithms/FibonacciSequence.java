@@ -1,26 +1,41 @@
 package algorithms;
 
+import java.util.ArrayList;
+
 public class FibonacciSequence {
 	
-	double phi = (1 + Math.sqrt(5))/2;
-	double Phi = (1 - Math.sqrt(5))/2;
-	double fib;
-	int num;
+	ArrayList<Integer> nums = new ArrayList<Integer>();
 	
-	public static void main(String[] args) {
-		FibonacciSequence fs = new FibonacciSequence();
-		fs.generateNums(94);
-		
-	}
 	
-	public void generateNums(int numTimes)
+public static void main(String[] args) {
+	
+	FibonacciSequence fs = new FibonacciSequence();
+	fs.addTerms(30, fs.nums);
+	System.out.println(fs.nums);
+}
+	
+	
+public int fib(int a)
+{
+	if(a <= 1)
 	{
-		for(int i = 0; i < numTimes; i++)
-		{
-		fib = (Math.pow(phi, i) - Math.pow(Phi, i))/Math.sqrt(5);
-		fib = Math.round(fib);
-		System.out.println(fib);
-		}
+		return a;
 	}
+	else
+	{
+		return fib(a - 1) + fib(a - 2);
+	}
+}
+
+
+public void addTerms(int i, ArrayList<Integer> a)
+{
+	for(int j = 1; j <= i; j++)
+	{
+		nums.add(fib(j));
+	}
+}
+
+
 
 }

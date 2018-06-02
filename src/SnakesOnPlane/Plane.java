@@ -9,7 +9,7 @@ public class Plane extends Randomness
 	public static void main(String[] args) {
 		Plane p = new Plane();
 		p.createSnakes(p.snakes);
-		System.out.println(p.probDeath(100));
+		System.out.println(p.probDeath(10));
 	}
 	
 	
