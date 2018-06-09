@@ -30,9 +30,9 @@ public class ThreadedNumberSorter {
 			nums[i] = randGen.nextInt(TOTAL_NUMS);
 		}
 
-		// printArray(nums);
+		 printArray(nums);
 		parallelSort(nums);
-		// printArray(nums);
+		 printArray(nums);
 	}
 
 	private static void printArray(int[] nums) {

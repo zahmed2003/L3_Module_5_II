@@ -1,36 +1,41 @@
 package algorithms;
 
+import java.util.ArrayList;
+
 public class FibonacciSequenceII {
 
-	String format;
+	ArrayList<Integer> nums = new ArrayList<Integer>();
 	
 	public static void main(String[] args) {
+		
 		FibonacciSequenceII fs = new FibonacciSequenceII();
-		String formatted = fs.formatFib(100);
-		System.out.println(formatted);
+		fs.generateFib(fs.nums, 46);
+		
+		System.out.println(fs.nums);
+		
 	}
 	
 	
-	public String formatFib(int nums)
+	public int fib(int i)
 	{
-		for(int i = 0; i < nums; i++)
+		if(i <= 1)
 		{
-			format = format + System.lineSeparator() + fib(i);
+			return i;
 		}
-		return format;
+		else
+		{
+			return fib(i-1) + fib(i - 2);
+		}
 	}
 	
 	
-	public int fib(int n)
+	public void generateFib(ArrayList<Integer> a, int n)
 	{
-	if(n <= 1)
-	{
-		return n;
+		for(int i = 1;  i <= n; i++ )
+		{
+			a.add(fib(i));
+		}
 	}
-	else
-	{
-		return fib(n - 1) + fib(n-2);
-	}
-	}
+	
 	
 }
