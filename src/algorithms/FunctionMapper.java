@@ -10,12 +10,12 @@ public class FunctionMapper
 	public static void main(String[] args) {
 		
 		FunctionMapper fm = new FunctionMapper();
-		fm.addValues(-10, 10);
+		fm.squared(-10, 10);
 		System.out.println(fm.map);
 		
 	}
 	
-	public void addValues(int start, int stop)
+	public void squared(int start, int stop)
 	{
 		for(int i = start; i <= stop; i++)
 		{
@@ -23,5 +23,6 @@ public class FunctionMapper
 		
 		}
 	}
+	
 
 }

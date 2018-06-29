@@ -25,5 +25,10 @@ public class BinaryConverter
 		}
 	}
 	
+	public String convert(int num)
+	{
+		
+	}
+	
 	
 }
