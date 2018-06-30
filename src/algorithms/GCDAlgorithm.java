@@ -1,24 +1,25 @@
 package algorithms;
 
-import java.util.ArrayList;
-
 public class GCDAlgorithm 
 {
-	ArrayList<Integer> remainder;
-	float r;
 	
 	public static void main(String[] args) 
 	{
 		GCDAlgorithm gcda = new GCDAlgorithm();
-		System.out.println(gcda.gcd(100, 90));
+		System.out.println(gcda.gcd(18, 9));
 	}
 	
 	public float gcd(float a, float b)
 	{
-		float remainder = Math.round((a/b - Math.floor(a/b))*b);
-		if(remainder == 0)
+		float r = Math.round((a/b - Math.floor(a/b))*b);
+		
+		if(r == 0)
 		{
-			
+			return b;
+		}
+		else
+		{
+			return gcd(b, r);
 		}
 	}
 }
