@@ -25,7 +25,7 @@ public void isPerfect(int k)
 	for(int n = 1; n <= k; k++)
 	{
 		
-	for(int i = 1; i <= n/2; i++)
+	for(int i = 2; i <= n/2; i++)
 	{
 		if(n%i == 0) {divisors.add(i);}
 	}

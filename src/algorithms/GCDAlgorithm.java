@@ -6,7 +6,7 @@ public class GCDAlgorithm
 	public static void main(String[] args) 
 	{
 		GCDAlgorithm gcda = new GCDAlgorithm();
-		System.out.println(gcda.gcd(18, 9));
+		System.out.println(gcda.gcd(102384, 918273));
 	}
 	
 	public float gcd(float a, float b)
