@@ -26,23 +26,34 @@ public class TestMatchingBrackets {
 	// USE A STACK TO COMPLETE THE METHOD FOR CHECKING IF EVERY OPENING BRACKET HAS
 	// A MATCHING CLOSING BRACKET
 
-	private boolean doBracketsMatch(String b) {
-		for(int i = 0; i < b.length(); i++)
+	private boolean doBracketsMatch(String s) {
+	
+		int sum = 0;
+		Stack<Character> c = new Stack<Character>();
+		char[] text = s.toCharArray();
+		
+		for(int i = 0; i < text.length; i++)
 		{
-			brackets.push(b.charAt(i));
+			if(text[i] == '{' || text[i] == '}') {c.push(text[i]);}
 		}
 		
+		int length = c.size();
 		
-		for(int j = 0; j < brackets.size(); j++)
+		if(c.get(0) == '}') {return false;}
+		
+		
+		for(int j = 0; j < length; j++)
 		{
-			if(numClosed < 0) {numClosed = 0;}
-			if(brackets.pop().toString().equals("}")) {numClosed += 1;}
-			if(brackets.pop().toString().equals("{")) {numClosed-= 1;}
+			char ch = c.pop();
+			
+			if(ch == '}') {sum++;}
+			else if(ch == '{') {sum--;}
+			
 		}
 		
-		
-		if(numClosed == 0) {return true;}
+		if(sum == 0) {return true;}
 		else {return false;}
+		
 	}
-
+	
 }
